@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<h2>Information</h2>
+<form>
+<div class="form-group">
+<label for="emailtosend">Email:</label>
+<textarea class="form-control" rows="4" id="emailtosend"  placeholder="Enter email" name="emailtosend"></textarea>
+</div>
+<div class="form-group">
+<label for="subject">Subject:</label>
+<input type="text" class="form-control" id="subject" placeholder="Enter subject" name="subject">
+</div>
+<div class="form-group">
+<label for="message">Message:</label>
+<input type="text" class="form-control" id="message" placeholder="Enter message" name="message">
+</div>
+<button type="submit" onClick="formSubmit()"  class="btn btn-default">Submit</button>
+</form>
+</div>
+
+</body>
+<script type="text/javascript">
+function formSubmit() {
+google.script.run.sendemail(document.forms[0]);
+}
+</script>
+</html>
